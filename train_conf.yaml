@@ -1,0 +1,38 @@
+# See agent/config.py for docs
+cuda: True
+environment: MineRLObtainDiamondDense-v0
+seed: null
+skip_failed: True
+
+state:
+  batch_size: 256
+  checkpoint_freq: 5
+  cnn_out: 256
+  critic_iters: 5
+  critic_turbo_iters: 100
+  critic_clamp: 0.01
+  epochs: 1000
+  frame_gen_filters: 64
+  inv_out: 64
+  lr: 0.00005
+  state_size: 512
+  num_workers: 8
+  num_act: 41
+  num_inv: 29
+  num_reward: 12
+  reward_decay: 0.9
+  rnn_layers: 2
+  seq_lens:
+    1: 10
+    #1: 8
+    #16: 7
+    #128: 7
+    #1024: 7
+  steps_per_epoch: 5120
+
+trans:
+  num_models: 10
+  prune_proba: 0.1
+  prune_epsilon: 0.01
+  reg_coef: 1e-3
+
